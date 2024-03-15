@@ -17,7 +17,8 @@ The script is added as a menu item in the Unity editor under `Tools > Burst > Ad
 ## Note
 
 Please make sure to backup your scripts before running this script as it modifies the original files.
-If your project script folder has diffrent path, update it in code
+
+If your project script folder has diffrent path, update correct path in code
 
 ## Disclaimer
 
