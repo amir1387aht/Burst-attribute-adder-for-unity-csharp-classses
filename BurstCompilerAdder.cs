@@ -1,16 +1,18 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using UnityEditor;
 using UnityEngine;
 
 public class BurstCompilerAdder : MonoBehaviour
 {
-    private void OnValidate()
+    [MenuItem("Tools/Burst/Add Burst Attribute To All classes")]
+    public static void ConvertClasses()
     {
         ProcessDirectory(Application.dataPath + "/Scripts");
     }
 
-    private void ProcessDirectory(string directoryPath)
+    private static void ProcessDirectory(string directoryPath)
     {
         DirectoryInfo dirInfo = new DirectoryInfo(directoryPath);
         FileInfo[] files = dirInfo.GetFiles("*.cs");
@@ -24,7 +26,7 @@ public class BurstCompilerAdder : MonoBehaviour
             ProcessDirectory(subDirectory.FullName);
     }
 
-    private void ProcessFile(FileInfo file)
+    private static void ProcessFile(FileInfo file)
     {
         string text = File.ReadAllText(file.FullName);
         string[] lines = text.Split('\n');
