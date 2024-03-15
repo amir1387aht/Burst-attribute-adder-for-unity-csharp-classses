@@ -1,4 +1,4 @@
-# Burst Compiler Adder
+# Burst Compiler Attribute Adder
 
 This Unity script automatically adds the `using Unity.Burst;` directive and the `[BurstCompile]` attribute to all C# scripts in a specified directory and its subdirectories.
 
